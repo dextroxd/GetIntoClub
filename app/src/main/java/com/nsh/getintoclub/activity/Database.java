@@ -78,7 +78,7 @@ public class Database extends AppCompatActivity {
         AndroidNetworking.initialize(getApplicationContext());
         AndroidNetworking.setParserFactory(new JacksonParserFactory());
         //End of AndroidNetworking config
-        
+
         super.onCreate(savedInstanceState);
         initUI();
         try {
@@ -110,7 +110,7 @@ public class Database extends AppCompatActivity {
             jsonObject = new JSONObject();
         }
         System.out.println(jsonObject);
-        AndroidNetworking.post("http://192.168.0.105:3000/postcandidate")
+        AndroidNetworking.post("http://clubcoming.herokuapp.com/postcandidate")
                 .addJSONObjectBody(jsonObject) // posting json
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)
